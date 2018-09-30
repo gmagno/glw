@@ -1,0 +1,34 @@
+{
+    "recommendations": [
+        // general
+        "visualstudioexptteam.vscodeintellicode",
+        "christian-kohler.path-intellisense",
+        "2gua.rainbow-brackets",
+        "oderwat.indent-rainbow",
+        "EditorConfig.EditorConfig",
+        "ms-vsliveshare.vsliveshare",
+        "robertohuertasm.vscode-icons",
+        "shardulm94.trailing-spaces",
+        // git
+        "eamodio.gitlens",
+        // python
+        "ms-python.python",
+        "magicstack.MagicPython",
+        // docker
+        "peterjausovec.vscode-docker",
+        // rst
+        "lextudio.restructuredtext",
+        // .env
+        "mikestead.dotenv",
+        // js + html + css
+        "abusaidm.html-snippets",
+        "dbaeumer.vscode-eslint",
+        "formulahendry.auto-close-tag",
+        "hwencc.html-tag-wrapper",
+        "pranaygp.vscode-css-peek",
+        "xabikos.JavaScriptSnippets",
+        "Zignd.html-css-class-completion",
+        // sqlite
+        "alexcvzz.vscode-sqlite"
+    ]
+}

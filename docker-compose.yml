@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+
+  db:
+    container_name: db
+    restart: always
+    image: postgres:10.4
+    env_file:
+      - ./compose/postgres/.env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    container_name: adminer
+    image: adminer:4.6.3
+    restart: always
+    ports:
+      - 8080:8080
+
+  log_server:
+    container_name: log_server
+    build:
+      context: .
+      dockerfile: ./compose/log_server/Dockerfile
+    image: log_server:0.1
+    env_file:
+      - ./compose/log_server/.env
+    volumes:
+      - ${PWD}/compose/log_server/data/udp_server.log:/code/udp_server.log
+    ports:
+      - "60000:60000/udp"
+
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: ./compose/app/Dockerfile
+    depends_on:
+      # - log_server
+      - db
+    image: app:0.1
+    env_file:
+      - ./compose/app/.env
+    ports:
+      - "60010:60010"
+      - "60030:60030"
+      - "60040:60040"
+    volumes:
+      - ${PWD}/compose/app/data/report/index.html:/code/report/index.html
+      # - ${PWD}/test:/code/test
+      # - ${PWD}/app:/code/app
+
+volumes:
+  db_data: {}
+  db_data_backups: {}

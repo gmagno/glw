@@ -1,0 +1,18 @@
+{
+    "python.pythonPath": "python",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "python.analysis.openFilesOnly": false,
+    "python.jediEnabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintEnabled": false,
+    "python.linting.prospectorPath": "prospector",
+    "python.linting.prospectorEnabled": true,
+    "python.linting.prospectorArgs": [
+        "--tool pylint",
+        "--tool pep8"
+    ],
+}
