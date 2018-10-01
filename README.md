@@ -11,6 +11,7 @@ Get code and install with:
 ```bash
 git clone git@github.com:goncalo-godwitlabs/glw.git && cd glw/
 make install
+pipenv shell  # ensure the environment is activated for the following commands as well
 ```
 
 Optionally, for debugging purposes it may be useful to run a simple log server
